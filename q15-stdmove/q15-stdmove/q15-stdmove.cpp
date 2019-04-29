@@ -7,7 +7,8 @@ std::string get_engine_model_from_file()
 
 struct Engine
 {
-	Engine(std::string model) : model_(std::move(model)) { }
+	Engine(const std::string& model) : model_(model) { }
+	Engine(std::string&& model) : model_(std::move(model)) { }
 
 private:
 	std::string model_;
@@ -15,7 +16,8 @@ private:
 
 struct Car
 {
-	Car(std::string engine_model) : engine_(std::move(engine_model)) { }
+	Car(const std::string& engine_model) : engine_(engine_model) { }
+	Car(std::string&& engine_model) : engine_(std::move(engine_model)) { }
 
 private:
 	Engine engine_;
