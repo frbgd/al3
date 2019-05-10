@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
+#include <cctype>
 
 int main()
 {
@@ -59,6 +60,11 @@ int main()
 	{
 		std::cout << "v не содержит чисел, делящихся без остатка на 2\n";
 	}
+
+	/////////////////////////////////////////////////////////////////////////////////////transform
+	std::string s("hello");
+	std::transform(s.begin(), s.end(), s.begin(), (int (*)(int))std::toupper);
+	std::cout << s;
 
 	return 0;
 }
