@@ -35,6 +35,7 @@ int main()
 	delete ptr;
 	std::cout << std::endl;
 	T* ptr1 = new (std::string("some bedug message")) T;
+	//ptr1->operator delete(ptr1, std::string("some debug message"));
 	T::operator delete(ptr1, std::string("some debug message"));
 
 	return 0;
